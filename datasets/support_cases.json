@@ -1,0 +1,98 @@
+[
+  {
+    "input": "Someone logged into our admin account from a location I don't recognize.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "Does the Pro plan support SSO?",
+    "target": "RESOLVE"
+  },
+  {
+    "input": "I was charged twice this month.",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "Can you send me a copy of my latest invoice?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "I can't remember my password and need to log in.",
+    "target": "RESOLVE"
+  },
+  {
+    "input": "Our admin account is locked after too many failed login attempts.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "Our Slack integration stopped syncing this morning.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "Is there a documented fix for error code 502 in the integration settings?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "What features are included in the Pro plan?",
+    "target": "RESOLVE"
+  },
+  {
+    "input": "Can I use SSO on the Basic plan?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "Please permanently delete all data associated with our account.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "I think someone may have accessed confidential customer files.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "Can you change the billing email on our account?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "I want to cancel our monthly subscription.",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "Our invoice total looks wrong, but I don't know which charge caused it.",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "How do I reset my password?",
+    "target": "RESOLVE"
+  },
+  {
+    "input": "Can you confirm whether a user named Alex has access to our account?",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "The dashboard is loading slowly today. Is there a known outage?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "Does Relay support exporting reports as CSV?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "Which plan includes advanced analytics?",
+    "target": "REQUEST_INFO"
+  },
+  {
+    "input": "I need help configuring SSO for my organization.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "A teammate says their account was deleted unexpectedly.",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "Can you refund a $900 duplicate charge?",
+    "target": "ESCALATE"
+  },
+  {
+    "input": "I was charged twice and here is the invoice ID and both charge dates.",
+    "target": "RESOLVE"
+  }
+]

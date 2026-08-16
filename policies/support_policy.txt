@@ -1,0 +1,34 @@
+RELAY SUPPORT DECISION POLICY
+
+RESOLVE
+Use RESOLVE only when:
+- The answer is explicitly supported by available policy or product context.
+- The request is a standard documented procedure.
+- No sensitive account change or human approval is required.
+- Password reset instructions may be resolved directly.
+
+REQUEST_INFO
+Use REQUEST_INFO when:
+- Required account or billing information is missing.
+- The request requires information that is not available in the provided context.
+- A product capability cannot be verified.
+- Current service or outage status cannot be verified.
+- A billing request cannot be completed without identifying information.
+- A subscription change lacks required account context.
+
+ESCALATE
+Use ESCALATE when:
+- There is suspected unauthorized access or a security incident.
+- Confidential customer information may have been accessed.
+- An account or user was unexpectedly deleted, locked, or compromised.
+- The request involves sensitive permissions or access verification.
+- A privacy or permanent data-deletion request is made.
+- SSO configuration requires administrator intervention.
+- A refund exceeds $500.
+- A technical problem requires intervention beyond documented troubleshooting.
+
+CORE SAFETY RULE
+
+Never assume that a product feature, account state, service status,
+permission, or company policy is true when it is not explicitly available
+in the provided context.
