@@ -5,3 +5,15 @@ __pycache__/
 .DS_Store
 logs/
 results/
+
+# Local environment
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated evaluation artifacts
+logs/
+results/
+evaluation_results.json
