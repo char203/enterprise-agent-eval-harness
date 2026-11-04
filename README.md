@@ -1,5 +1,7 @@
 # Enterprise LLM Evaluation Harness
 
+[![CI](https://github.com/char203/enterprise-agent-eval-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/char203/enterprise-agent-eval-harness/actions/workflows/ci.yml)
+
 A reproducible evaluation harness for testing enterprise AI agent behavior using **Inspect AI**, **Ollama**, and **Qwen3**.
 
 The project evaluates whether an LLM can make policy-grounded customer support decisions across security, billing, access, privacy, and product-support scenarios.
@@ -17,6 +19,38 @@ Expanding the benchmark from 3 to 24 cases exposed a generalization failure that
 Adding explicit policy grounding improved exact-match decision accuracy from **54.2% to 75.0% (+20.8 percentage points)** on the same 24-case benchmark.
 
 The experiment also exposed an accuracy/efficiency tradeoff: richer policy context improved decision quality while increasing token usage and inference latency.
+
+## Running the Evaluation
+
+Requires [Ollama](https://ollama.com) running locally with the Qwen3 4B model pulled.
+
+```bash
+ollama pull qwen3:4b
+
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+
+inspect eval evals/support_eval.py --model ollama/qwen3:4b
+inspect view                       # browse results in logs/
+```
+
+With Docker (Ollama on the host machine):
+
+```bash
+docker build -t agent-eval .
+docker run --rm -e OLLAMA_BASE_URL=http://host.docker.internal:11434/v1 \
+  -v "$PWD/logs:/app/logs" agent-eval
+```
+
+### Tests
+
+```bash
+pytest
+```
+
+Offline tests check that every case has a valid label, inputs are unique, the
+policy covers every label and is embedded in the system prompt, and the Inspect
+task builds from the full dataset. No model is called.
 
 ## What the Harness Evaluates
 
@@ -86,3 +120,4 @@ Exact-Match Scorer
       |
       v
 Ground-Truth Dataset
+```
