@@ -9,6 +9,9 @@ from inspect_ai.solver import system_message, generate
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 POLICY_PATH = PROJECT_ROOT / "policies" / "support_policy.txt"
+DATASET_PATH = PROJECT_ROOT / "datasets" / "support_cases.json"
+
+LABELS = ("RESOLVE", "REQUEST_INFO", "ESCALATE")
 
 SUPPORT_POLICY = POLICY_PATH.read_text()
 
@@ -39,10 +42,9 @@ ESCALATE
 Do not provide explanations or additional text.
 """
 
-def load_cases():
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent
-    path = PROJECT_ROOT / "datasets" / "support_cases.json"
-    cases = json.loads(path.read_text())
+
+def load_cases(path=DATASET_PATH):
+    cases = json.loads(Path(path).read_text())
 
     return [
         Sample(
